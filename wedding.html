@@ -7,16 +7,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Patrick+Hand&display=swap" rel="stylesheet"> 
     <!-- <script src="script.js"></script> -->
+    <script defer>
+        function set_date(){
+        let today=new Date();
+        let wedding_date = new Date('2022-07-02');
+        let days_left = Math.ceil((wedding_date - today) / (1000*60*60*24));
+        document.getElementById("days_left").textContent=days_left
+      }
+      // if (today.getMonth()==11 && today.getDate()>25) 
+      // {
+      // cmas.setFullYear(cmas.getFullYear()+1); 
+      // }  
+      // var one_day=1000*60*60*24;
+      // console.log(Math.ceil((cmas.getTime()-today.getTime())/(one_day))+
+      // " days left until Christmas!");
+    </script>
   </head>
-  <body>
-    <div class="test">
-        <p> 
-            This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.
-        </p>
-        <p>
-            If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, the remaining space would take up twice as much space as the others (or it will try to, at least).
-        </p>
-
-    </div>
+  <body onload="set_date()">
+      <div id="main">
+        <p><span id="days_left">?</span> days until</p>
+        <h1>Evelin and Ricardo's big day (!?)</h1>
+        <h2><< 2nd July 2022 >></h2>
+        <h2>A tentative timeline:</h2>
+        <div class="timeline" hidden>
+          <p><span class="time">15h00</span> Church</p>
+          <p><span class="time">16h00</span> Photos</p>
+          <p><span class="time">17h00</span> Cocktails & Games</p>
+          <p><span class="time">19h00</span> Banquet</p>
+          <p><span class="time">21h00</span> Party</p>
+          <p><span class="time">22h30</span> Cake</p>
+          <p><span class="time">24h00</span> Supper</p>
+        </div>
+        <button>Previous events</button>
+        <div class="timeline">
+          <p><span class="time">15h00</span> Church</p>
+          <p><span class="time">16h00</span> Photos</p>
+          <p><span class="time">17h00</span> Cocktails & Games</p>
+          <p><span class="time">19h00</span> Banquet</p>
+          <p><span class="time">21h00</span> Party</p>
+          <p><span class="time">22h30</span> Cake</p>
+          <p><span class="time">24h00</span> Supper</p>
+        </div>
+        <button>Next events</button>
+        <h2>Gift's obligations and expectations</h2>
+        <h2>I wanna sign up!</h2>
+        <h2>Where the heck is this?</h2>
+        <li>Directions + train times + Accomodation</li>
+        <h2>Is it going to be Covidy?</h2>
+      </div>
+      <!-- SSN -->
+    </ol>
   </body>
 </html>

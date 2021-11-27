@@ -3,21 +3,31 @@ html{
 }
 
 body {
+    height: 100%;
+    margin: 0;
+    background-color: #9FB3AA;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18pt;
+    color: #5F0916;
+}
+
+#flag-outer-container {
     min-height: 100%;
     display: flex;
     justify-content: center;
     margin: 0;
     background-color: #9FB3AA;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 18pt;
+
 }
 
-.container {
+#flag-inner-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    text-align: center;
 }
 
 .flag {
@@ -29,6 +39,106 @@ body {
     opacity: 100%;
 }
 
-.container h2{
+#main {
     text-align: center;
+}
+
+#main ul{
+    display: inline-block;
+    text-align: left;
+} */
+
+/* Timeline */
+/* https://codepen.io/letsbleachthis/pen/YJgNpv */
+
+/* //Text Styles 
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+$font-sans: 'Open Sans', sans-serif; */
+
+/* Colors */
+:root {
+    --black: #34435E;
+    --white: #ffffff;
+}
+
+/* body {
+  font-family: $font-sans;
+  margin: 0;
+  padding: 0 4em;
+} */
+
+.timeline {
+  min-width: 300px;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.timeline p {
+  font-size: 1em;
+  line-height: 1.75em;
+  border-top: 3px solid;
+  border-image: linear-gradient(to right, #C55F46 0%, #5F0916 100%);
+  border-image-slice: 1;
+  border-width: 3px;
+  margin: 0;
+  padding: 40px 60px;
+  counter-increment: section;
+  position: relative;
+  /* color: var(--black); */
+}
+/* //numbers */
+.timeline .time {
+    /* content: counter(section); */
+    position: absolute;
+    margin-top: -15px;
+    border-radius: 50%;
+    padding: 5px;
+    height: 3em;
+    width: 3em;
+    /* background-color: var(--black); */
+    text-align: center;
+    line-height: 3em;
+    /* color: var(--white); */
+    background-color: white;
+    border: solid 3px black;
+    font-size: 20px;
+}
+
+/* //odd number borders */
+.timeline p:nth-child(odd) {
+    text-align: left;
+    border-left: 3px solid;
+    padding-right: 0;
+}
+
+.timeline p:nth-child(odd) .time {
+    right: 100%; 
+    margin-right: -35px;
+    border-color: #C55F46;
+}
+
+/* //even number borders */
+.timeline p:nth-child(even) {
+  border-right: 3px solid;
+  padding-left: 0;
+  text-align: right;
+}
+
+.timeline p:nth-child(even) .time {
+    left: 100%; 
+    margin-left: -35px;
+    border-color: #5F0916;
+}
+
+/* //handle first and last */
+.timeline p:first-child {
+  border-top: 0;
+  border-top-right-radius:0;
+  border-top-left-radius:0;
+}
+
+.timeline p:last-child {
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
 }
