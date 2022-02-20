@@ -1,3 +1,57 @@
+/* Reset CSS */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Main CSS */
+
+
 html{
     height: 100%;
 }
@@ -5,10 +59,10 @@ html{
 body {
     height: 100%;
     margin: 0;
-    background-color: #9FB3AA;
+    background-color: white; /*#9FB3AA;*/
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18pt;
-    color: #5F0916;
+    color: #000000;
 }
 
 #flag-outer-container {
@@ -40,6 +94,30 @@ body {
 }
 
 #main {
+    /* text-align: center; */
+}
+
+#main p {
+    padding: 1em;
+}
+
+
+
+h1 {
+    padding: 1em;
+    font-size: 2em;
+    text-align: center;
+}
+
+h2 {
+    padding: 1em;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h3 {
+    padding: 1em;
+    font-size: 1.1em;
     text-align: center;
 }
 
@@ -57,8 +135,8 @@ $font-sans: 'Open Sans', sans-serif; */
 
 /* Colors */
 :root {
-    --black: #34435E;
-    --white: #ffffff;
+    --black: #191726;
+    --white: #f5f5f4;
 }
 
 /* body {
@@ -74,35 +152,50 @@ $font-sans: 'Open Sans', sans-serif; */
   margin-bottom: 50px;
 }
 
-.timeline p {
+#main .timeline p {
   font-size: 1em;
   line-height: 1.75em;
   border-top: 3px solid;
-  border-image: linear-gradient(to right, #C55F46 0%, #5F0916 100%);
+  border-image: linear-gradient(to right, var(--black) 0%, #550818 100%);
   border-image-slice: 1;
   border-width: 3px;
   margin: 0;
   padding: 40px 60px;
   counter-increment: section;
   position: relative;
-  /* color: var(--black); */
 }
+
+#main .separate p {
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #191726 0%, #f5f5f4 30%, #f5f5f4 70%, #550818 100%);
+    border-image-slice: 1;
+}
+
+.timeline .who {
+    display: block;
+    font-size: .7em;
+    line-height: 20px;
+    margin-top: -18px;
+}
+
 /* //numbers */
-.timeline .time {
-    /* content: counter(section); */
+.timeline .time,
+.timeline .date {
     position: absolute;
     margin-top: -15px;
     border-radius: 50%;
     padding: 5px;
     height: 3em;
     width: 3em;
-    /* background-color: var(--black); */
     text-align: center;
     line-height: 3em;
-    /* color: var(--white); */
     background-color: white;
     border: solid 3px black;
     font-size: 20px;
+}
+
+.timeline .date{
+    width: 5em;
 }
 
 /* //odd number borders */
@@ -112,10 +205,11 @@ $font-sans: 'Open Sans', sans-serif; */
     padding-right: 0;
 }
 
-.timeline p:nth-child(odd) .time {
+.timeline p:nth-child(odd) .time,
+.timeline p:nth-child(odd) .date {
     right: 100%; 
     margin-right: -35px;
-    border-color: #C55F46;
+    border-color: #191726;
 }
 
 /* //even number borders */
@@ -123,22 +217,44 @@ $font-sans: 'Open Sans', sans-serif; */
   border-right: 3px solid;
   padding-left: 0;
   text-align: right;
+  color: #550818;
 }
 
-.timeline p:nth-child(even) .time {
+.timeline p:nth-child(even) .time,
+.timeline p:nth-child(even) .date {
     left: 100%; 
     margin-left: -35px;
-    border-color: #5F0916;
+    border-color: #550818;
+    color: #550818;
 }
 
 /* //handle first and last */
-.timeline p:first-child {
+#main .timeline p:first-child {
   border-top: 0;
   border-top-right-radius:0;
   border-top-left-radius:0;
 }
 
-.timeline p:last-child {
+#main .timeline p:last-child {
   border-bottom-right-radius:0;
   border-bottom-left-radius:0;
+}
+
+.timeline-button {
+    display: block;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.green-bg{
+    background-color: #9FB3AA;    
+}
+
+.white-bg{
+    background-color: #f5f5f4;
+}
+
+.black-bg{
+    color: white;
+    background-color: #161917;
 }
