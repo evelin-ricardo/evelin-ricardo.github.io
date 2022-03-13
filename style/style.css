@@ -145,6 +145,15 @@ $font-sans: 'Open Sans', sans-serif; */
   padding: 0 4em;
 } */
 
+#header {
+    text-align: center;
+}
+
+#header img {
+    display: block;
+    margin: auto;
+}
+
 .timeline {
   min-width: 300px;
   max-width: 500px;
@@ -211,6 +220,11 @@ $font-sans: 'Open Sans', sans-serif; */
     margin-right: -35px;
     border-color: #191726;
 }
+.timeline p:nth-child(odd) img {
+    position:absolute;
+    right: 115%;
+    bottom: 5%;
+}
 
 /* //even number borders */
 .timeline p:nth-child(even) {
@@ -218,6 +232,12 @@ $font-sans: 'Open Sans', sans-serif; */
   padding-left: 0;
   text-align: right;
   color: #550818;
+}
+
+.timeline p:nth-child(even) img {
+    position:absolute;
+    left: 115%;
+    bottom: 5%;
 }
 
 .timeline p:nth-child(even) .time,
@@ -257,4 +277,10 @@ $font-sans: 'Open Sans', sans-serif; */
 .black-bg{
     color: white;
     background-color: #161917;
+}
+
+.icon-section {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10%;
 }

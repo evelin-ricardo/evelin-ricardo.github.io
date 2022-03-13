@@ -26,7 +26,7 @@
           timeline.style.display = "none"
         }
         let new_height = document.documentElement.scrollHeight;
-        console.log(old_scrollTop, old_height, new_height)
+        // console.log(old_scrollTop, old_height, new_height)
         window.scrollTo(0, old_scrollTop + (new_height - old_height))
       }
 
@@ -46,7 +46,22 @@
           prev_timeline.style.display = "none"
         }
         let new_height = document.documentElement.scrollHeight;
-        console.log(old_scrollTop, old_height, new_height)
+        // console.log(old_scrollTop, old_height, new_height)
+        window.scrollTo(0, old_scrollTop + (new_height - old_height))
+      }
+
+      function toggle_map(){
+        let old_scrollTop = document.documentElement.scrollTop
+        let old_height = document.documentElement.scrollHeight
+
+        let map = document.getElementById("map")
+        let map_picture = document.getElementById("map-picture")
+        if (map_picture.style.display !== "none") {
+          map_picture.style.display = "none"
+          map.style.display = "block"
+        }
+
+        let new_height = document.documentElement.scrollHeight;
         window.scrollTo(0, old_scrollTop + (new_height - old_height))
       }
     </script>
@@ -54,9 +69,12 @@
   <body onload="set_date()">
       <div id="main">
         <section class="green-bg">
-          <p><span id="days_left">?</span> days until</p>
-          <h1>Evelin and Ricardo's big day (!?)</h1>
-          <h2><< 2nd July 2022 >></h2>
+          <div id="header">
+            <p><span id="days_left">?</span> days until</p>
+            <h1>Evelin and Ricardo's big day (!?)</h1>
+            <img src="img/icons_calendar.png"/>
+            <h2><< 2nd July 2022 >></h2>
+          </div>
         </section>
 
         <section class="white-bg">
@@ -132,15 +150,51 @@
           </button>
 
           <div class="timeline">
-            <p><span class="time">15h00</span> Church ceremony</p>
-            <p><span class="time">16h00</span> Photos</p>
-            <p><span class="time">17h00</span> Cocktails & Games</p>
-            <p><span class="time">18h30</span> Banquet</p>
-            <p><span class="time">20h00</span> First dance</p>
-            <p><span class="time">22h00</span> Cake</p>
-            <p><span class="time">23h30</span> Bride dance</p>
-            <p><span class="time">24h00</span> Supper</p>
-            <p><span class="time">04h52</span> Sunrise</p>
+            <p>
+              <img src="img/icons_church.png"/>
+              <span class="time">15h00</span> 
+              Church ceremony
+            </p>
+            <p>
+              <span class="time">16h00</span>
+              Photos
+              <img src="img/icons_camera.png"/>
+            </p>
+            <p>
+              <img src="img/icons_cocktail.png"/>
+              <span class="time">17h00</span>
+              Cocktails & Games
+            </p>
+            <p>
+              <span class="time">18h30</span>
+              Banquet
+              <img src="img/icons_dinner.png"/>
+            </p>
+            <p>
+              <img src="img/icons_party.png"/>
+              <span class="time">20h00</span>
+              First dance
+            </p>
+            <p>
+              <span class="time">22h00</span>
+              Cake
+              <img src="img/icons_cake.png"/>
+            </p>
+            <p>
+              <span class="time">23h30</span>
+              Bride dance
+              <img src="img/icons_party.png"/>
+            </p>
+            <p>
+              <img src="img/icons_midnight_dinner.png"/>
+              <span class="time">24h00</span>
+              Supper
+            </p>
+            <p>
+              <span class="time">04h52</span>
+              Sunrise
+              <img src="img/icons_midnight_dinner.png"/>
+            </p>
           </div>
           <button class="timeline-button">To be continued...</button>
         </section>
@@ -185,7 +239,15 @@
           </p>
 
           <h3>Map</h3>
-          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F" width="640" height="480"></iframe>
+          <div class="toggle">
+            <input type="checkbox" id="temp">
+            <label for="temp">Show Google Maps</label>
+          </div>
+
+          <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F" width="496" height="480" style="display: none;"></iframe>
+          <a href="#map" onclick="event.preventDefault();toggle_map()">
+            <img id="map-picture" src="img/map.png">
+          </a>
         </section>
 
         <section class="green-bg">
@@ -202,17 +264,24 @@
 
         <section class="white-bg">
           <h2>Gift's obligations and expectations</h2>
-          <p>
-            {no gift drawing}
-            As you can see from our timeline, we have lived together for a long time. As such, we have hoarded everything we could possibly need for our home, and would kindly request no boxed gifts. Your presence is the best gift you could give us!
-          </p>
+          <div class="icon-section">            
+            <p>
+              As you can see from our timeline, we have lived together for a long time. As such, we have hoarded everything we could possibly need for our home, and would kindly request no boxed gifts. Your presence is the best gift you could give us!
+            </p>
+            <img src="img/icons_gifts.png"/>
+          </div>
         </section>
 
         <section class="green-bg">
-         <h2>Is it going to be Covidy?</h2>
-         <p>We don't know! We want this event to be safe for everyone.</p>
-         <p>All of us and close relatives have been vaccinated.</p>
-         <p>We kindly ask everyone who is attending and can be vaccinated to do so, in order to protect the more vulnerable attendants.</p>
+          <h2>Is it going to be Covidy?</h2>
+          <div class="icon-section">            
+            <div><img src="img/icons_covid.png"/></div>
+            <div>
+              <p>We don't know! We want this event to be safe for everyone.</p>
+              <p>All of us and close relatives have been vaccinated.</p>
+              <p>We kindly ask everyone who is attending and can be vaccinated to do so, in order to protect the more vulnerable attendants.</p>
+            </div>
+          </div>
         </section>
 
         <section class="black-bg">
