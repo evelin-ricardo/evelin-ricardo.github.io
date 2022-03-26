@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Evelin & Ricardo</title>
+    <link rel="stylesheet" href="style/reset.css">
     <link rel="stylesheet" href="style/style.css">
+        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Patrick+Hand&display=swap" rel="stylesheet"> 
     <!-- <script src="script.js"></script> -->
@@ -26,7 +32,7 @@
           timeline.style.display = "none"
         }
         let new_height = document.documentElement.scrollHeight;
-        console.log(old_scrollTop, old_height, new_height)
+        // console.log(old_scrollTop, old_height, new_height)
         window.scrollTo(0, old_scrollTop + (new_height - old_height))
       }
 
@@ -46,7 +52,22 @@
           prev_timeline.style.display = "none"
         }
         let new_height = document.documentElement.scrollHeight;
-        console.log(old_scrollTop, old_height, new_height)
+        // console.log(old_scrollTop, old_height, new_height)
+        window.scrollTo(0, old_scrollTop + (new_height - old_height))
+      }
+
+      function toggle_map(){
+        let old_scrollTop = document.documentElement.scrollTop
+        let old_height = document.documentElement.scrollHeight
+
+        let map = document.getElementById("map")
+        let map_picture = document.getElementById("map-picture")
+        if (map_picture.style.display !== "none") {
+          map_picture.style.display = "none"
+          map.style.display = "block"
+        }
+
+        let new_height = document.documentElement.scrollHeight;
         window.scrollTo(0, old_scrollTop + (new_height - old_height))
       }
     </script>
@@ -54,9 +75,12 @@
   <body onload="set_date()">
       <div id="main">
         <section class="green-bg">
-          <p>Még <span id="days_left">?</span> nap</p>
-          <h1>Evelin és Ricardo nagy napja (!?)</h1>
-          <h2><< 2022 július 2>></h2>
+          <div id="header">
+            <h3>Még <span id="days_left">?</span> nap</h3>
+            <h1>Evelin és Ricardo nagy napja!</h1>
+            <h3>2022. július 2. — Piliscsaba</h3>
+            <!-- <img src="img/icons_calendar.png"/> -->
+          </div>
         </section>
 
         <section class="white-bg">
@@ -68,7 +92,7 @@
               <span class="who">Ricardo</span> Megszületett Évorában
             </p>
             <p>
-              <span class="date">1994.15.18.</span>
+              <span class="date">1994.05.18.</span>
               <span class="who">Evelin</span> Megszületett Budapesten
             </p>
             <p>
@@ -104,7 +128,7 @@
               <span class="who">Evelin</span> Anglisztikát tanul Piliscsabán
             </p>
             <p>
-              <span class="date">2014.09.</span>
+              <span class="date">2014 szept.</span>
               <span class="who">Ricardo</span> Elkezdi az Erasmust Padovában
             </p>
             <p>
@@ -114,7 +138,7 @@
           </div>
 
           <button onclick="toggle_past_separate()" id="button-toggle-past-separate" class="timeline-button" style="display:none">
-            Mielőtt találkoztak...
+            És mielőtt találkoztak...
           </button>
 
           <div class="timeline" id="timeline-past-together" style="display:none">
@@ -128,86 +152,145 @@
           </div>
           
           <button onclick="toggle_past_together()" id="button-toggle-past-together" class="timeline-button">
-            Korábban...
+            Kattints a történetükért...
           </button>
 
           <div class="timeline">
-            <p><span class="time">15:00</span> Templomi szertartás</p>
-            <p><span class="time">16:00</span> Fotók</p>
-            <p><span class="time">17:00</span> Koktélok és játékok</p>
-            <p><span class="time">18:30</span> Vacsora</p>
-            <p><span class="time">20:00</span> Első tánc</p>
-            <p><span class="time">22:00</span> Torta</p>
-            <p><span class="time">23:30</span> Menyasszonytánc</p>
-            <p><span class="time">24:00</span> Éjféli vacsora</p>
-            <p><span class="time">04:52</span> Napfelkelte</p>
+            <p>
+              <img src="img/icons_church.png"/>
+              <span class="time">15:00</span> 
+              Templomi szertartás
+            </p>
+            <p>
+              <span class="time">16:00</span>
+              Fotók
+              <img src="img/icons_camera.png"/>
+            </p>
+            <p>
+              <img src="img/icons_cocktail.png"/>
+              <span class="time">17:00</span>
+              Koktélok és játékok
+            </p>
+            <p>
+              <span class="time">18:00</span>
+              Vacsora
+              <img src="img/icons_dinner.png"/>
+            </p>
+            <p>
+              <img src="img/icons_party.png"/>
+              <span class="time">20:00</span>
+              Első tánc
+            </p>
+            <p>
+              <span class="time">22:00</span>
+              Torta
+              <img src="img/icons_cake.png"/>
+            </p>
+            <p>
+              <span class="time">23:30</span>
+              Menyasszonytánc
+              <img src="img/icons_party.png"/>
+            </p>
+            <p>
+              <img src="img/icons_midnight_dinner.png"/>
+              <span class="time">24:00</span>
+              Éjféli vacsora
+            </p>
+            <p>
+              <span class="time">04:52</span>
+              Napfelkelte
+              <img src="img/icons_midnight_dinner.png"/>
+            </p>
           </div>
-          <button class="timeline-button">Folytatjuk...</button>
+          <!-- <button class="timeline-button">Folyt. köv...</button> -->
+        </section>
+
+        <section class="green-bg">
+          <h2>Hol lesz?</h2>
+         
+          <div class="text-section">
+            <h3>Piliscsaba</h3>
+            <p>
+              <a href="https://goo.gl/maps/4tEGDiPXZ2KEx7yF9" target="_blank">Piliscsaba</a> egy kisváros Budapest közelében, az erdős Budai hegyek és Pilis közötti völgybe ékelődve.
+            </p>
+            <p>
+              A legfrisebb adatok szerint 8.391 lakosa van, melynek Ricardo számítása szerint 5%-a a Schmidt családhoz tartozik. Ezt ne felejtsd el, amikor üdvözlöd a helyieket!
+            </p>
+            <p>
+              <b>🚂 Vonattal:</b> A vonatok a  <a href="https://goo.gl/maps/yG6XKpPhH8qQevio7" target="_blank">Nyugati pályaudvarról</a> indulnak félóránként. A Nyugatiból 13:51-kor induló vonatot javasoljuk, ami 14:30-kor érkezik Piliscsabára.
+            </p>
+            <p>
+              <b>🚗 Autóval:</b> A 10-es út köti össze Piliscsabát Budapesttel. A 25 kilométeres út kb fél óráig tart, forgalomtól függően.
+            </p>
+            
+            <div class="divider div-transparent"></div>
+
+            <h3>Szertartás</h3>
+            <p>
+              {templom rajz}
+              Az esküvői szertartás a festői <a href="https://goo.gl/maps/huHSWEjPabPDJrN38" target="_blank">Piliscsabai Református Templomban</a> lesz (akit érdekel, itt a Wikipedia bejegyzés <a href="https://hu.wikipedia.org/wiki/K%C3%A1lvin_J%C3%A1nos" target="_blank">Kálvin János úrról</a>, aki sajnos nem lesz jelen). A vasútállomás kevesebb, mint 1 km-re van (kb 15 perc séta). Ingyenes parkolóhelyek elérhetőek a templomnál vagy a közeli utcákban.
+            </p>  
+          
+            <h3>Lagzi</h3>
+            <p>
+              {koktélok rajz}
+              A lagzi helyszíne a <a href="https://goo.gl/maps/qTG1D5a1K88z7zmh6" target="_blank">Továbbjutás Rendezvényház</a>. A helyszín 1,5 km-re van a templomtól (25 perc séta). Transzfert biztosítunk a szertartás után (kérlek jelezd igényed a Google formban!). Ingyenes parkolás a helyszínen.
+            </p>
+
+            <div class="divider div-transparent"></div>
+
+            <h3>Térkép</h3>
+            <div class="toggle">
+              <input type="checkbox" id="temp">
+              <label for="temp">Google Térkép</label>
+            </div>
+
+            <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F" width="496" height="480" style="display: none;"></iframe>
+            <a href="#map" onclick="event.preventDefault();toggle_map()">
+              <img id="map-picture" src="img/map.png">
+            </a>
+          </div>
+        </section>
+
+        <section class="white-bg">
+          <h2>Hol tudok aludni?</h2>
+            <div class="text-section">
+              <p>
+                Szeretnénk bátorítani, hogy töltsd az éjszakát a városban, hogy minél tovább velünk tudj ünnepelni. Van néhány vendégház a környéken, ami tökéletes 1 éjszakára, ezekről minden infót megtalálsz <a href="https://docs.google.com/document/d/1WZ77rKJWGLyKS-GhgXvsOmB4jexT-qBEurm1unO-W6Q/edit?usp=sharing" target="_blank">itt</a>. Néhány helyet előre lefoglaltunk. Kérlek a lenti Google form kitöltésekor jelezd, ha szeretnél itt aludni és szívesen segítünk a foglalásban.
+              </p>
+          </div>
+        </section>
+
+        <section class="green-bg">
+          <h2>Ajándékok</h2>
+          <div class="icon-section icon-right"> 
+            <div>
+              <p>
+                Ahogy ezt fent is láthattad, hosszú ideje együtt élünk. Időközben összegyűjtöttünk mindent, amire szükségünk van az otthonunkhoz, így arra szeretnénk kérni, hogy ne hozz tárgyi ajándékokat. A jelenléted a legjobb ajándék, amit kaphatunk!
+              </p>
+            </div>
+            <div>
+              <img src="img/icons_gifts.png"/>
+            </div>
+          </div>
+        </section>
+
+        <section class="white-bg">
+          <h2>Covid biztos lesz az esemény?</h2>
+          <div class="icon-section icon-left">            
+            <div><img src="img/icons_covid.png"/></div>
+            <div>
+              <p>Nem tudjuk! Azt szeretnénk, ha ez a nap biztonságos lenne mindenki számára.</p>
+              <p>Mi és a hozzánk közel állók mind be vagyunk oltva.</p>
+              <p>Arra kérünk mindenkit, aki fel tudja venni az oltást, hogy tegye meg, hogy megvédjük a sebezhetőbb vendégeket. Köszönjük!</p>
+            </div>
+          </div>
         </section>
 
         <section class="green-bg">
           <h2>Szeretnék jönni! {nagy rajz}</h2>
-          <p>Kérlek töltsd ki ezt a <a href=# target="_blank">Google formot</a> amint lehet (vagy legkésőbb május 1-ig)</p>
-        </section>
-
-        <section class="white-bg">
-          <h2>Hol lesz?</h2>
-          <h3>Piliscsaba</h3>
-          <p>
-            <a href="https://goo.gl/maps/4tEGDiPXZ2KEx7yF9" target="_blank">Piliscsaba</a> egy kisváros Budapest közelében, az erdős Budai hegyek és Pilis közötti völgybe ékelődve.
-          </p>
-          <p>
-            -> Vonattal: A vonatok a <a href="https://goo.gl/maps/yG6XKpPhH8qQevio7" target="_blank">Nyugati pályaudvarról</a> indulnak félóránként. A Nyugatiból 13:51-kor induló vonatot javasoljuk, ami 14:30-kor érkezik Piliscsabára.
-          </p>
-          <p>
-            -> Autóval: A 10-es út köti össze Piliscsabát Budapesttel. A 25 kilométeres út kb fél óráig tart, forgalomtól függően.
-          </p>  
-          <p>
-            A legfrisebb adatok szerint 8.391 lakosa van, melynek Ricardo számítása szerint 5%-a a Schmidt családhoz tartozik. Ezt ne felejtsd el, amikor üdvözlöd a helyieket!
-          </p>
-          <p>
-            A munkanélküliség 4%, és a lakosok nagy része Budapestre ingázik (iskolába vagy munkába).
-          </p>
-          <p>
-            A Pázmány Péter Katolikus Egyetem is itt kapott helyett, egykori szovjet barakkok helyén. Az egyetem nemrég elköltözött. {egyetem rajz}
-          </p>
-
-          <h3>Szertartás</h3>
-          <p>
-            {templom rajz}
-            Az esküvői szertartás a festői <a href="https://goo.gl/maps/huHSWEjPabPDJrN38" target="_blank">Piliscsabai Református Templomban</a> lesz (aki érdekel, itt a Wikipedia bejegyzés <a href="https://en.wikipedia.org/wiki/John_Calvin" target="_blank">Kálvin János úrról</a>, aki sajnos nem lesz jelen). A vasútállomás kevesebb, mint 1 km-re van (kevesebb, mint 15 perc séta). Ingyenes parkolóhelyek elérhetőek a templomnál vagy a közeli utcákban.
-          </p>  
-          
-          <h3>Lagzi</h3>
-          <p>
-            {koktél rajz}
-            A lagzi helyszíne a <a href="https://goo.gl/maps/qTG1D5a1K88z7zmh6" target="_blank">Tovabbjutas Rendezvényház</a>. A helyszín 1,5 km-re van a templomtól (25 perc séta). Transzfert biztosítunk a templomtól (kérlek jelezd igényed a Google formban!). Ingyenes parkolás a helyszínen. 
-          </p>
-
-          <h3>Térkép</h3>
-          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F" width="640" height="480"></iframe>
-        </section>
-
-        <section class="green-bg">
-          <h2>Hol tudok aludni?</h2>
-          <p>
-            Szeretnénk bátorítani, hogy töltsd az éjszakát a városban, hogy minél tovább velünk tudj ünnepelni. Van néhány vendégház a környéken, ami tökéletes 1-1 éjszakára, minden infót megtalálsz <a href="https://docs.google.com/document/d/1WZ77rKJWGLyKS-GhgXvsOmB4jexT-qBEurm1unO-W6Q/edit?usp=sharing" target="_blank">itt</a>. Néhány helyet előre lefoglaltunk. Kérlek a fenti Google form kitöltésekor jelezd, ha szeretnél itt aludni és szívesen segítünk a foglalásban.
-          </p>
-        </section>
-
-        <section class="white-bg">
-          <h2>Ajándékok</h2>
-          <p>
-            {ajándék nem kell rajz}
-            Ahogy ezt fentebb is láthattad, hosszú ideje együtt élünk. Időközben sikeresen összegyűjtöttünk mindent, amire csak szükségünk van az otthonunkhoz, így arra szeretnénk kérni, hogy ne hozz tárgyi ajándékokat. A jelenléted a legjobb ajándék, amit tudsz hozni!
-          </p>
-        </section>
-
-        <section class="green-bg">
-         <h2>Covid biztos lesz az esemény?</h2>
-         <p>Nem tudjuk! Azt szeretnénk, ha ez a nap biztonságos lenne mindenki számára.</p>
-         <p>Mi és a hozzánk közel állók mind be vagyunk oltva.</p>
-         <p>Arra kérünk mindenkit, aki fel tudja venni az oltást, hogy tegye meg, hogy megvédjük a sebezhetőbb vendégeket. Köszönjük!</p>
+          <p>Kérlek töltsd ki ezt a Google formot, amint lehet (vagy legkésőbb május 1-ig)</p>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQagFblYOou2bsS53f-rCd6Yy4YkToInvqyaKBRa7pyn5r_Q/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Betöltés...</iframe>
         </section>
 
         <section class="black-bg">
