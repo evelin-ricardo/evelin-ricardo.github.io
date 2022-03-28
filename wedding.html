@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Patrick+Hand&display=swap" rel="stylesheet"> 
-    <!-- <script src="script.js"></script> -->
     <script defer>
       function set_date(){
         let today=new Date();
@@ -56,20 +55,6 @@
         window.scrollTo(0, old_scrollTop + (new_height - old_height))
       }
 
-      function toggle_map(){
-        let old_scrollTop = document.documentElement.scrollTop
-        let old_height = document.documentElement.scrollHeight
-
-        let map = document.getElementById("map")
-        let map_picture = document.getElementById("map-picture")
-        if (map_picture.style.display !== "none") {
-          map_picture.style.display = "none"
-          map.style.display = "block"
-        }
-
-        let new_height = document.documentElement.scrollHeight;
-        window.scrollTo(0, old_scrollTop + (new_height - old_height))
-      }
     </script>
   </head>
   <body onload="set_date()">
@@ -79,7 +64,6 @@
             <h3><span id="days_left">?</span> days until</h3>
             <h1>Evelin and Ricardo's big day!</h1>
             <h3>2nd July 2022 — Piliscsaba, Hungary</h3>
-            <!-- <img src="img/icons_calendar.png"/> -->
           </div>
         </section>
 
@@ -138,7 +122,7 @@
           </div>
 
           <button onclick="toggle_past_separate()" id="button-toggle-past-separate" class="timeline-button" style="display:none">
-            And before we met...
+            Click to see before we met...
           </button>
 
           <div class="timeline" id="timeline-past-together" style="display:none">
@@ -177,7 +161,7 @@
               <img src="img/icons_dinner.png"/>
             </p>
             <p>
-              <img src="img/icons_party.png"/>
+              <img src="img/icons_bridedance.png"/>
               <span class="time">20h00</span>
               First dance
             </p>
@@ -199,7 +183,7 @@
             <p>
               <span class="time">04h52</span>
               Sunrise
-              <img src="img/icons_midnight_dinner.png"/>
+              <img src="img/icons_sunrise.png"/>
             </p>
           </div>
           <!-- <button class="timeline-button">To be continued...</button> -->
@@ -207,7 +191,7 @@
 
         <section class="green-bg">
           <h2>Where the heck is this?</h2>
-         
+
           <div class="text-section">
             <h3>Piliscsaba</h3>
             <p>
@@ -227,28 +211,21 @@
 
             <h3>Ceremony</h3>
             <p>
-              {drawing church}
-              The wedding ceremony will take place in the whimsical <a href="https://goo.gl/maps/huHSWEjPabPDJrN38" target="_blank">Calvinist Church of Piliscsaba</a> (if curious here is the Wikipedia page of <a href="https://en.wikipedia.org/wiki/John_Calvin" target="_blank">Mr. John Calvin</a>, who won't be present). Train station is located less than 1 km away (less than 15-minute walk). Parking places available on location or on the streets nearby.
+              💒 The wedding ceremony will take place in the whimsical <a href="https://goo.gl/maps/huHSWEjPabPDJrN38" target="_blank">Calvinist Church of Piliscsaba</a> (if curious here is the Wikipedia page of <a href="https://en.wikipedia.org/wiki/John_Calvin" target="_blank">Mr. John Calvin</a>, who won't be present). Train station is located less than 1 km away (less than 15-minute walk). Parking places available on location or on the streets nearby.
             </p>  
           
             <h3>Reception</h3>
             <p>
-              {drawing cocktails}
-              The reception will take place in <a href="https://goo.gl/maps/qTG1D5a1K88z7zmh6" target="_blank">Tovabbjutas</a> (pronounced toh-vab-yu-tash). Venue is located 1.5 km from the Church (25-minute walk). Transfer will be provided from the Church (please request so in the signup form!). Parking places available on location. 
+              🍹 The reception will take place in <a href="https://goo.gl/maps/qTG1D5a1K88z7zmh6" target="_blank">Tovabbjutas</a> (pronounced toh-vab-yu-tash). Venue is located 1.5 km from the Church (25-minute walk). Transfer will be provided from the Church (please request so in the signup form!). Parking places available on location. 
             </p>
 
             <div class="divider div-transparent"></div>
+          </div>
 
-            <h3>Map</h3>
-            <div class="toggle">
-              <input type="checkbox" id="temp">
-              <label for="temp">Show Google Maps</label>
-            </div>
-
-            <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F" width="496" height="480" style="display: none;"></iframe>
-            <a href="#map" onclick="event.preventDefault();toggle_map()">
-              <img id="map-picture" src="img/map.png">
-            </a>
+          <div><h3>Map</h3></div>
+          <div id="map-section">
+            <img id="map-picture" src="img/map.png">
+            <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F"></iframe>
           </div>
         </section>
 
@@ -257,11 +234,11 @@
             <div class="text-section">
               <h3>Coming for a single day</h3>
               <p>
-                We would like to invite you to stay overnight if you can and want to. There are some places in town you can book for the night. You can find up-to-date info <a href="https://docs.google.com/document/d/1WZ77rKJWGLyKS-GhgXvsOmB4jexT-qBEurm1unO-W6Q/edit?usp=sharing" target="_blank">here</a>. We have pre-booked one of the places. Please let us know if you would like to sleep overnight when you fill the signup form.
+                ⛺ We would like to invite you to stay overnight if you can and want to. There are some places in town you can book for the night. You can find up-to-date info <a href="https://docs.google.com/document/d/1WZ77rKJWGLyKS-GhgXvsOmB4jexT-qBEurm1unO-W6Q/edit?usp=sharing" target="_blank">here</a>. We have pre-booked one of the places. Please let us know if you would like to sleep overnight when you fill the signup form.
               </p>
               <h3>Coming from abroad</h3>
               <p>
-                If you want to stay close to us in Piliscsaba, you can find up-to-date info <a href="https://docs.google.com/document/d/1QhvzmFHe52G3KZaTI9P6nIridWxrXYBQgWcIYpRPBWU/edit?usp=sharing" target="_blank">here</a>.  We have pre-booked several places for the dates around the wedding. Please let us know if you would like to stay in any of them when you fill the signup form.
+                🏨 If you want to stay close to us in Piliscsaba, you can find up-to-date info <a href="https://docs.google.com/document/d/1QhvzmFHe52G3KZaTI9P6nIridWxrXYBQgWcIYpRPBWU/edit?usp=sharing" target="_blank">here</a>.  We have pre-booked several places for the dates around the wedding. Please let us know if you would like to stay in any of them when you fill the signup form.
               </p>
           </div>
         </section>
@@ -293,13 +270,26 @@
         </section>
 
         <section class="green-bg">
-          <h2>I wanna sign up! {big drawing}</h2>
-          <p>Please fill this <a href=# target="_blank">Google form</a> ASAP (or until May 1st if you are busy)</p>
+          <h2>I wanna sign up!</h2>
+          <div class="text-section">
+            <p>
+              Please fill this Google form ASAP (until May 1st) to help us prepare everything ahead of time.
+            </p>
+          </div>
+          <!-- <div class="icon-section icon-right">
+            <div>
+              <p>Please fill this Google form ASAP (until May 1st) to let us know if you and your pets are coming</p>
+            </div>
+            <div><img src="img/icons_form.png"/></div>
+          </div> -->
           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdySpcDnLTV3TqQbIuF8p_hpuZuKDYJXAzDlnA8SwrZZPufMQ/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </section>
 
         <section class="black-bg">
-          <h2>Contacts</h2>
+          <div class="icon-section icon-left icon-center">
+            <div><h2>See you there!</h2></div>
+            <div><img src="img/icons_calendar.png"/></div>
+          </div>
          </section>
       </div>
     </ol>
