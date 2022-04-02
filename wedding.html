@@ -1,297 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Evelin & Ricardo</title>
-    <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/style.css">
-        
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Patrick+Hand&display=swap" rel="stylesheet"> 
-    <script defer>
-      function set_date(){
-        let today=new Date();
-        let wedding_date = new Date('2022-07-02');
-        let days_left = Math.ceil((wedding_date - today) / (1000*60*60*24));
-        document.getElementById("days_left").textContent=days_left
-      }
 
-      function toggle_past_separate(){
-        let old_scrollTop = document.documentElement.scrollTop
-        let old_height = document.documentElement.scrollHeight
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evelin & Ricardo</title>
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/style.css">
 
-        let timeline = document.getElementById("timeline-past-separate")
-        if (timeline.style.display === "none") {
-          timeline.style.display = "block"
-        } else {
-          timeline.style.display = "none"
-        }
-        let new_height = document.documentElement.scrollHeight;
-        // console.log(old_scrollTop, old_height, new_height)
-        window.scrollTo(0, old_scrollTop + (new_height - old_height))
-      }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="scripts/scripts.js"></script>
+</head>
 
-      function toggle_past_together(){
-        let old_scrollTop = document.documentElement.scrollTop
-        let old_height = document.documentElement.scrollHeight
-
-        let prev_button = document.getElementById("button-toggle-past-separate")
-        let prev_timeline = document.getElementById("timeline-past-separate")
-        let timeline = document.getElementById("timeline-past-together")
-        if (timeline.style.display === "none") {
-          timeline.style.display = "block"
-          prev_button.style.display = "block"
-        } else {
-          timeline.style.display = "none"
-          prev_button.style.display = "none"
-          prev_timeline.style.display = "none"
-        }
-        let new_height = document.documentElement.scrollHeight;
-        // console.log(old_scrollTop, old_height, new_height)
-        window.scrollTo(0, old_scrollTop + (new_height - old_height))
-      }
-
-    </script>
-  </head>
-  <body onload="set_date()">
-      <div id="main">
-        <section class="green-bg">
-          <div id="header">
-            <h3><span id="days_left">?</span> days until</h3>
-            <h1>Evelin and Ricardo's big day!</h1>
-            <h3>2nd July 2022 — Piliscsaba, Hungary</h3>
-          </div>
-        </section>
-
-        <section class="white-bg">
-          <h2>Timeline</h2>
-
-          <div class="timeline separate" id="timeline-past-separate" style="display:none">
-            <p>
-              <span class="date">14.04.1994</span>
-              <span class="who">Ricardo</span> Born in Évora
-            </p>
-            <p>
-              <span class="date">18.05.1994</span>
-              <span class="who">Evelin</span> Born in Budapest
-            </p>
-            <p>
-              <span class="time">1997</span>
-              <span class="who">Ricardo</span> Cries for more pacifiers
-            </p>
-            <p>
-              <span class="time">1998</span>
-              <span class="who">Evelin</span> Relocates across the street (50m)
-            </p>
-            <p>
-              <span class="time">1999</span>
-              <span class="who">Ricardo</span> Gets a Mickey watch
-            </p>
-            <p>
-              <span class="time">2000</span>
-              <span class="who">Evelin</span> Peak of modelling career
-            </p>
-            <p>
-              <span class="time">2006</span>
-              <span class="who">Ricardo</span> Relocates to Albufeira (200 km)
-            </p>
-            <p>
-              <span class="time">2009</span>
-              <span class="who">Evelin</span> Writes love stories
-            </p>
-            <p>
-              <span class="time">2012</span>
-              <span class="who">Ricardo</span> Studies Psychology in Lisbon
-            </p>
-            <p>
-              <span class="time">2012</span>
-              <span class="who">Evelin</span> Studies English in Piliscsaba
-            </p>
-            <p>
-              <span class="date">Sep 2014</span>
-              <span class="who">Ricardo</span> Starts Erasmus in Padova
-            </p>
-            <p>
-              <span class="date">01.03.2015</span>
-              <span class="who">Evelin</span> Starts Erasmus in Padova
-            </p>
-          </div>
-
-          <button onclick="toggle_past_separate()" id="button-toggle-past-separate" class="timeline-button" style="display:none">
-            Click to see before we met...
-          </button>
-
-          <div class="timeline" id="timeline-past-together" style="display:none">
-            <p><span class="date">10.03.2015</span> First meeting</p>
-            <p><span class="date">24.05.2015</span> First kiss</p>
-            <p><span class="date">01.06.2015</span> Start dating</p>
-            <p><span class="date">21.08.2017</span> Live together in Portugal</p>
-            <p><span class="date">10.07.2018</span> Move together in Hungary</p>
-            <p><span class="date">26.09.2021</span> Engagement</p>
-            <p><span class="date">02.07.2022</span> Wedding!</p>
-          </div>
-          
-          <button onclick="toggle_past_together()" id="button-toggle-past-together" class="timeline-button">
-            Click to see how we met...
-          </button>
-
-          <div class="timeline">
-            <p>
-              <img src="img/icons_church.png"/>
-              <span class="time">15h00</span> 
-              Church ceremony
-            </p>
-            <p>
-              <span class="time">16h00</span>
-              Photos
-              <img src="img/icons_camera.png"/>
-            </p>
-            <p>
-              <img src="img/icons_cocktail.png"/>
-              <span class="time">17h00</span>
-              Cocktails & Games
-            </p>
-            <p>
-              <span class="time">18h30</span>
-              Banquet
-              <img src="img/icons_dinner.png"/>
-            </p>
-            <p>
-              <img src="img/icons_bridedance.png"/>
-              <span class="time">20h00</span>
-              First dance
-            </p>
-            <p>
-              <span class="time">22h00</span>
-              Cake
-              <img src="img/icons_cake.png"/>
-            </p>
-            <p>
-              <span class="time">23h30</span>
-              Bride dance
-              <img src="img/icons_party.png"/>
-            </p>
-            <p>
-              <img src="img/icons_midnight_dinner.png"/>
-              <span class="time">24h00</span>
-              Supper
-            </p>
-            <p>
-              <span class="time">04h52</span>
-              Sunrise
-              <img src="img/icons_sunrise.png"/>
-            </p>
-          </div>
-          <!-- <button class="timeline-button">To be continued...</button> -->
-        </section>
-
-        <section class="green-bg">
-          <h2>Where the heck is this?</h2>
-
-          <div class="text-section">
-            <h3>Piliscsaba</h3>
-            <p>
-              <a href="https://goo.gl/maps/4tEGDiPXZ2KEx7yF9" target="_blank">Piliscsaba</a> (pronounced Pi-lish-tcha-ba) is a town near Budapest, Hungary, located in a valley between the forested Buda and Pilis hills.
-            </p>
-            <p>
-              There are 8.391 inhabitants, roughly 5% of which belong to the Schmidt (fiancée's) family. Keep that in mind when you greet locals.
-            </p>
-            <p>
-              <b>🚂 Coming by Train:</b> There are trains departing from <a href="https://goo.gl/maps/yG6XKpPhH8qQevio7" target="_blank">Nyugati railway station</a> in Budapest, every 30 minutes. We recommend taking the 13h51 train that arrives at 14h30 to Piliscsaba train station
-            </p>
-            <p>
-              <b>🚗 Coming by Car:</b> Road 10 connects Piliscsaba to Budapest. The 25 km journey takes around 30 minutes, subject to traffic.
-            </p>
-            
-            <div class="divider div-transparent"></div>
-
-            <h3>Ceremony</h3>
-            <p>
-              💒 The wedding ceremony will take place in the whimsical <a href="https://goo.gl/maps/huHSWEjPabPDJrN38" target="_blank">Calvinist Church of Piliscsaba</a> (if curious here is the Wikipedia page of <a href="https://en.wikipedia.org/wiki/John_Calvin" target="_blank">Mr. John Calvin</a>, who won't be present). Train station is located less than 1 km away (less than 15-minute walk). Parking places available on location or on the streets nearby.
-            </p>  
-          
-            <h3>Reception</h3>
-            <p>
-              🍹 The reception will take place in <a href="https://goo.gl/maps/qTG1D5a1K88z7zmh6" target="_blank">Tovabbjutas</a> (pronounced toh-vab-yu-tash). Venue is located 1.5 km from the Church (25-minute walk). Transfer will be provided from the Church (please request so in the signup form!). Parking places available on location. 
-            </p>
-
-            <div class="divider div-transparent"></div>
-          </div>
-
-          <div><h3>Map</h3></div>
-          <div id="map-section">
-            <img id="map-picture" src="img/map.png">
-            <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F"></iframe>
-          </div>
-        </section>
-
-        <section class="white-bg">
-          <h2>Where to sleep?</h2>
-            <div class="text-section">
-              <h3>Coming for a single day</h3>
-              <p>
-                ⛺ We would like to invite you to stay overnight if you can and want to. There are some places in town you can book for the night. You can find up-to-date info <a href="https://docs.google.com/document/d/1WZ77rKJWGLyKS-GhgXvsOmB4jexT-qBEurm1unO-W6Q/edit?usp=sharing" target="_blank">here</a>. We have pre-booked one of the places. Please let us know if you would like to sleep overnight when you fill the signup form.
-              </p>
-              <h3>Coming from abroad</h3>
-              <p>
-                🏨 If you want to stay close to us in Piliscsaba, you can find up-to-date info <a href="https://docs.google.com/document/d/1QhvzmFHe52G3KZaTI9P6nIridWxrXYBQgWcIYpRPBWU/edit?usp=sharing" target="_blank">here</a>.  We have pre-booked several places for the dates around the wedding. Please let us know if you would like to stay in any of them when you fill the signup form.
-              </p>
-          </div>
-        </section>
-
-        <section class="green-bg">
-          <h2>Gift expectations</h2>
-          <div class="icon-section icon-right"> 
-            <div>
-              <p>
-                As you can see from our timeline, we have lived together for a long time. As such, we have hoarded everything we could possibly need for our home, and would kindly request no boxed gifts. Your presence is the best gift you could give us!
-              </p>
-            </div>
-            <div>
-              <img src="img/icons_gifts.png"/>
-            </div>
-          </div>
-        </section>
-
-        <section class="white-bg">
-          <h2>Is it going to be Covidy?</h2>
-          <div class="icon-section icon-left">            
-            <div><img src="img/icons_covid.png"/></div>
-            <div>
-              <p>We don't know! We want this event to be safe for everyone.</p>
-              <p>All of us and close relatives have been vaccinated.</p>
-              <p>We kindly ask everyone who is attending and can be vaccinated to do so, in order to protect the more vulnerable attendants.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="green-bg">
-          <h2>I wanna sign up!</h2>
-          <div class="text-section">
-            <p>
-              Please fill this Google form ASAP (until May 1st) to help us prepare everything ahead of time.
-            </p>
-          </div>
-          <!-- <div class="icon-section icon-right">
-            <div>
-              <p>Please fill this Google form ASAP (until May 1st) to let us know if you and your pets are coming</p>
-            </div>
-            <div><img src="img/icons_form.png"/></div>
-          </div> -->
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdySpcDnLTV3TqQbIuF8p_hpuZuKDYJXAzDlnA8SwrZZPufMQ/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </section>
-
-        <section class="black-bg">
-          <div class="icon-section icon-left icon-center">
-            <div><h2>See you there!</h2></div>
-            <div><img src="img/icons_calendar.png"/></div>
-          </div>
-         </section>
+<body onload="set_date()">
+  <div id="main">
+    <section class="green-bg">
+      <div id="header">
+        <h3><span id="days_left">?</span> days until</h3>
+        <h1>Evelin and Ricardo's big day!</h1>
+        <h3>2nd July 2022 — Piliscsaba, Hungary</h3>
       </div>
-    </ol>
-  </body>
+    </section>
+
+    <section class="white-bg">
+      <h2>Timeline</h2>
+
+      <div class="timeline separate" id="timeline-past-separate" style="display:none">
+        <p>
+          <img src="img/icons_baby_pt.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            14.04<br>1994
+          </span>
+          <span class="who">Ricardo</span> Born in Évora
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            18.05<br>1994
+          </span>
+          <span class="who">Evelin</span> Born in Budapest
+          <img src="img/icons_baby_hu.png" />
+        </p>
+        <p>
+          <img src="img/icons_pacifier.png" />
+          <span class="time">1997</span>
+          <span class="who">Ricardo</span> Cries for more pacifiers
+        </p>
+        <p>
+          <span class="time">1998</span>
+          <span class="who">Evelin</span> Relocates across the street (50m)
+          <img src="img/icons_moved_house.png" />
+        </p>
+        <p>
+          <img src="img/icons_mickey.png" />
+          <span class="time">1999</span>
+          <span class="who">Ricardo</span> Gets a Mickey watch
+        </p>
+        <p>
+          <span class="time">2000</span>
+          <span class="who">Evelin</span> Peak of modelling career
+          <img src="img/icons_model.png" />
+        </p>
+        <p>
+          <img src="img/icons_moving_truck.png" />
+          <span class="time">2006</span>
+          <span class="who">Ricardo</span> Relocates to Albufeira (200 km)
+        </p>
+        <p>
+          <span class="time">2009</span>
+          <span class="who">Evelin</span> Writes love stories
+          <img src="img/icons_love_story.png" />
+        </p>
+        <p>
+          <img src="img/icons_book_blue.png" />
+          <span class="time">2012</span>
+          <span class="who">Ricardo</span> Studies Psychology in Lisbon
+        </p>
+        <p>
+          <span class="time">2012</span>
+          <span class="who">Evelin</span> Studies English in Piliscsaba
+          <img src="img/icons_book_red.png" />
+        </p>
+        <p>
+          <img src="img/icons_bike.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            Sep</br>2014
+          </span>
+          <span class="who">Ricardo</span> Starts Erasmus in Padova
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            01.03<br>2015
+          </span>
+          <span class="who">Evelin</span> Starts Erasmus in Padova
+          <img src="img/icons_pizza.png" />
+        </p>
+      </div>
+
+      <button onclick="toggle_past_separate()" id="button-toggle-past-separate" class="timeline-button"
+        style="display:none">
+        Click to see before we met...
+      </button>
+
+      <div class="timeline" id="timeline-past-together" style="display:none">
+        <p>
+          <img src="img/icons_first_meeting.png" />
+            <span class="date"><span class="topspace"></span>
+            10.03<br>2015
+          </span>
+          First meeting
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            24.05<br>2015
+          </span>
+          First kiss
+          <img src="img/icons_kiss.png" />
+        </p>
+        <p>
+          <img src="img/icons_holding_hands.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            01.06<br>2015
+          </span>
+          Start dating
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            21.08<br>2017
+          </span>
+          Live together in Portugal
+          <img src="img/icons_flag_pt.png" />
+        </p>
+        <p>
+          <img src="img/icons_flag_hu.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            10.07<br>2018
+          </span>
+          Move together in Hungary
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            26.09<br>2021
+          </span>
+          Engagement
+          <img src="img/icons_engagement_ring.png" />
+        </p>
+        <p>
+          <img src="img/icons_wedding.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            02.07<br>2022
+          </span>
+          Wedding!
+        </p>
+      </div>
+
+      <button onclick="toggle_past_together()" id="button-toggle-past-together" class="timeline-button">
+        Click to see how we met...
+      </button>
+
+      <div class="timeline">
+        <p>
+          <img src="img/icons_church.png" />
+          <span class="time">15h00</span>
+          Church ceremony
+        </p>
+        <p>
+          <span class="time">16h00</span>
+          Photos
+          <img src="img/icons_camera.png" />
+        </p>
+        <p>
+          <img src="img/icons_cocktail.png" />
+          <span class="time">17h00</span>
+          Cocktails
+        </p>
+        <p>
+          <span class="time">18h30</span>
+          Dinner
+          <img src="img/icons_dinner.png" />
+        </p>
+        <p>
+          <img src="img/icons_bridedance.png" />
+          <span class="time">20h00</span>
+          First dance
+        </p>
+        <p>
+          <span class="time">22h00</span>
+          Cake
+          <img src="img/icons_cake.png" />
+        </p>
+        <p>
+          <span class="time">23h30</span>
+          Bride dance
+          <img src="img/icons_party.png" />
+        </p>
+        <p>
+          <img src="img/icons_midnight_dinner.png" />
+          <span class="time">24h00</span>
+          Midnight dinner
+        </p>
+        <p>
+          <span class="time">04h52</span>
+          Sunrise
+          <img src="img/icons_sunrise.png" />
+        </p>
+      </div>
+      <!-- <button class="timeline-button">To be continued...</button> -->
+    </section>
+
+    <section class="green-bg">
+      <h2>Where the heck is this?</h2>
+
+      <div class="text-section">
+        <h3>Piliscsaba</h3>
+        <p>
+          <a href="https://goo.gl/maps/4tEGDiPXZ2KEx7yF9" target="_blank">Piliscsaba</a> (pronounced Pee-lish-tcha-ba) is
+          a town near Budapest, Hungary, located in a valley between the forested Buda and Pilis hills.
+        </p>
+        <p>
+          There are 8.391 inhabitants, roughly 5% of which belong to the Schmidt (bride's) family. Keep that in mind
+          when you greet locals.
+        </p>
+        <p>
+          <b>🚂 Coming by Train:</b> There are trains departing from <a href="https://goo.gl/maps/yG6XKpPhH8qQevio7"
+            target="_blank">Nyugati railway station</a> in Budapest, every 30 minutes. We recommend taking the 13h51
+          train that arrives at 14h30 to Piliscsaba train station.
+        </p>
+        <p>
+          <b>🚗 Coming by Car:</b> Road 10 connects Piliscsaba to Budapest. The 25 km journey takes around 30 minutes,
+          subject to traffic.
+        </p>
+
+        <div class="divider div-transparent"></div>
+
+        <h3>Ceremony</h3>
+        <p>
+          💒 The wedding ceremony will take place in the whimsical <a href="https://goo.gl/maps/huHSWEjPabPDJrN38"
+            target="_blank">Calvinist Church of Piliscsaba</a> (if curious here is the Wikipedia page of <a
+            href="https://en.wikipedia.org/wiki/John_Calvin" target="_blank">Mr. John Calvin</a>, who won't be present).
+          Train station is located less than 1 km away (less than 15-minute walk). Parking places available on location
+          or on the streets nearby.
+        </p>
+
+        <h3>Reception</h3>
+        <p>
+          🍹 The reception will take place in <a href="https://goo.gl/maps/qTG1D5a1K88z7zmh6"
+            target="_blank">Tovabbjutas</a> (pronounced toh-vab-yu-tash). Venue is located 1.5 km from the Church
+          (25-minute walk). Transfer will be provided from the Church (please request so in the signup form!). Parking
+          places available on location.
+        </p>
+
+        <div class="divider div-transparent"></div>
+      </div>
+
+      <div>
+        <h3>Map</h3>
+      </div>
+      <div id="map-section">
+        <img id="map-picture" src="img/map_en.png">
+        <iframe id="map"
+          src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F"></iframe>
+      </div>
+    </section>
+
+    <section class="white-bg">
+      <h2>Where to sleep?</h2>
+      <div class="text-section">
+        <h3>Coming for a single day</h3>
+        <p>
+          ⛺ We would like to invite you to stay overnight if you can and want to. There are some places in town you can
+          book for the night. You can find up-to-date info <a
+            href="https://docs.google.com/document/d/1QhvzmFHe52G3KZaTI9P6nIridWxrXYBQgWcIYpRPBWU/edit?usp=sharing"
+            target="_blank">here</a>. We have pre-booked some of the places. Please let us know if you would like to
+          sleep overnight when you fill the signup form.
+        </p>
+        <h3>Coming from abroad</h3>
+        <p>
+          🏨 If you want to stay close to us in Piliscsaba, you can find up-to-date info <a
+            href="https://docs.google.com/document/d/1QhvzmFHe52G3KZaTI9P6nIridWxrXYBQgWcIYpRPBWU/edit?usp=sharing"
+            target="_blank">here</a>. We have pre-booked several places for the dates around the wedding. Please let us
+          know if you would like to stay in any of them when you fill the signup form.
+        </p>
+      </div>
+    </section>
+
+    <section class="green-bg">
+      <h2>Gift expectations</h2>
+      <div class="icon-section icon-right">
+        <div>
+          <p>
+            As you can see from our timeline, we have lived together for a long time. As such, we have hoarded
+            everything we could possibly need for our home, and would kindly request no boxed gifts. Your presence is
+            the best gift you could give us!
+          </p>
+        </div>
+        <div>
+          <img src="img/icons_gifts.png" />
+        </div>
+      </div>
+    </section>
+
+    <section class="white-bg">
+      <h2>Is it going to be Covidy?</h2>
+      <div class="icon-section icon-left">
+        <div><img src="img/icons_covid.png" /></div>
+        <div>
+          <p>We don't know! We want this event to be safe for everyone.</p>
+          <p>All of us and close relatives have been vaccinated.</p>
+          <p>We kindly ask everyone who is attending and can be vaccinated to do so, in order to protect the more
+            vulnerable attendants.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="green-bg">
+      <h2>I wanna sign up!</h2>
+      <div class="text-section">
+        <p>
+          Please fill this Google form ASAP (until May 1st) to help us prepare everything ahead of time.
+        </p>
+      </div>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdySpcDnLTV3TqQbIuF8p_hpuZuKDYJXAzDlnA8SwrZZPufMQ/viewform?embedded=true"
+        width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+
+    <section class="black-bg">
+      <div class="icon-section icon-left icon-center">
+        <div>
+          <h2>See you<br>there!</h2>
+        </div>
+        <div><img src="img/icons_calendar.png" /></div>
+        <h4>Illustrations by<br>Schmidt Rebeka</h4>
+      </div>
+    </section>
+  </div>
+  </ol>
+</body>
+
 </html>
