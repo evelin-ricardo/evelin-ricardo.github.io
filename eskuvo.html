@@ -1,302 +1,342 @@
 <!DOCTYPE html>
 <html lang="hu">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Evelin & Ricardo</title>
-    <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/style.css">
-        
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Patrick+Hand&display=swap" rel="stylesheet"> 
-    <!-- <script src="script.js"></script> -->
-    <script defer>
-      function set_date(){
-        let today=new Date();
-        let wedding_date = new Date('2022-07-02');
-        let days_left = Math.ceil((wedding_date - today) / (1000*60*60*24));
-        document.getElementById("days_left").textContent=days_left
-      }
 
-      function toggle_past_separate(){
-        let old_scrollTop = document.documentElement.scrollTop
-        let old_height = document.documentElement.scrollHeight
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evelin & Ricardo</title>
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/style.css">
 
-        let timeline = document.getElementById("timeline-past-separate")
-        if (timeline.style.display === "none") {
-          timeline.style.display = "block"
-        } else {
-          timeline.style.display = "none"
-        }
-        let new_height = document.documentElement.scrollHeight;
-        // console.log(old_scrollTop, old_height, new_height)
-        window.scrollTo(0, old_scrollTop + (new_height - old_height))
-      }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="scripts/scripts.js"></script>
+</head>
 
-      function toggle_past_together(){
-        let old_scrollTop = document.documentElement.scrollTop
-        let old_height = document.documentElement.scrollHeight
-
-        let prev_button = document.getElementById("button-toggle-past-separate")
-        let prev_timeline = document.getElementById("timeline-past-separate")
-        let timeline = document.getElementById("timeline-past-together")
-        if (timeline.style.display === "none") {
-          timeline.style.display = "block"
-          prev_button.style.display = "block"
-        } else {
-          timeline.style.display = "none"
-          prev_button.style.display = "none"
-          prev_timeline.style.display = "none"
-        }
-        let new_height = document.documentElement.scrollHeight;
-        // console.log(old_scrollTop, old_height, new_height)
-        window.scrollTo(0, old_scrollTop + (new_height - old_height))
-      }
-
-      function toggle_map(){
-        let old_scrollTop = document.documentElement.scrollTop
-        let old_height = document.documentElement.scrollHeight
-
-        let map = document.getElementById("map")
-        let map_picture = document.getElementById("map-picture")
-        if (map_picture.style.display !== "none") {
-          map_picture.style.display = "none"
-          map.style.display = "block"
-        }
-
-        let new_height = document.documentElement.scrollHeight;
-        window.scrollTo(0, old_scrollTop + (new_height - old_height))
-      }
-    </script>
-  </head>
-  <body onload="set_date()">
-      <div id="main">
-        <section class="green-bg">
-          <div id="header">
-            <h3>Még <span id="days_left">?</span> nap</h3>
-            <h1>Evelin és Ricardo nagy napja!</h1>
-            <h3>2022. július 2. — Piliscsaba</h3>
-            <!-- <img src="img/icons_calendar.png"/> -->
-          </div>
-        </section>
-
-        <section class="white-bg">
-          <h2>Menetrend:</h2>
-
-          <div class="timeline separate" id="timeline-past-separate" style="display:none">
-            <p>
-              <span class="date">1994.04.14.</span>
-              <span class="who">Ricardo</span> Megszületett Évorában
-            </p>
-            <p>
-              <span class="date">1994.05.18.</span>
-              <span class="who">Evelin</span> Megszületett Budapesten
-            </p>
-            <p>
-              <span class="time">1997</span>
-              <span class="who">Ricardo</span> Még több cumiért sír
-            </p>
-            <p>
-              <span class="time">1998</span>
-              <span class="who">Evelin</span> Egy utcával arrébb költözik (50m)
-            </p>
-            <p>
-              <span class="time">1999</span>
-              <span class="who">Ricardo</span> Mickey egeres órát kap
-            </p>
-            <p>
-              <span class="time">2000</span>
-              <span class="who">Evelin</span> Modell karrierjének csúcsa
-            </p>
-            <p>
-              <span class="time">2006</span>
-              <span class="who">Ricardo</span> Albufeirába költözik (200 km)
-            </p>
-            <p>
-              <span class="time">2009</span>
-              <span class="who">Evelin</span> Szerelmes történeteket ír
-            </p>
-            <p>
-              <span class="time">2012</span>
-              <span class="who">Ricardo</span> Pszichológiát tanul Lisszabonban
-            </p>
-            <p>
-              <span class="time">2012</span>
-              <span class="who">Evelin</span> Anglisztikát tanul Piliscsabán
-            </p>
-            <p>
-              <span class="date">2014 szept.</span>
-              <span class="who">Ricardo</span> Elkezdi az Erasmust Padovában
-            </p>
-            <p>
-              <span class="date">2015.03.01.</span>
-              <span class="who">Evelin</span> Elkezdi az Erasmust Padovában
-            </p>
-          </div>
-
-          <button onclick="toggle_past_separate()" id="button-toggle-past-separate" class="timeline-button" style="display:none">
-            És mielőtt találkoztak...
-          </button>
-
-          <div class="timeline" id="timeline-past-together" style="display:none">
-            <p><span class="date">2015.03.10.</span> Első találkozás</p>
-            <p><span class="date">2015.05.24.</span> Első csók</p>
-            <p><span class="date">2015.06.01.</span> Párkapcsolat kezdete</p>
-            <p><span class="date">2017.08.21.</span> Összeköltözés Portugáliában</p>
-            <p><span class="date">2018.07.10.</span> Összeköltözés Magyarországon</p>
-            <p><span class="date">2021.09.26.</span> Eljegyzés</p>
-            <p><span class="date">2022.07.02.</span> Esküvő!</p>
-          </div>
-          
-          <button onclick="toggle_past_together()" id="button-toggle-past-together" class="timeline-button">
-            Kattints a történetükért...
-          </button>
-
-          <div class="timeline">
-            <p>
-              <img src="img/icons_church.png"/>
-              <span class="time">15:00</span> 
-              Templomi szertartás
-            </p>
-            <p>
-              <span class="time">16:00</span>
-              Fotók
-              <img src="img/icons_camera.png"/>
-            </p>
-            <p>
-              <img src="img/icons_cocktail.png"/>
-              <span class="time">17:00</span>
-              Koktélok és játékok
-            </p>
-            <p>
-              <span class="time">18:00</span>
-              Vacsora
-              <img src="img/icons_dinner.png"/>
-            </p>
-            <p>
-              <img src="img/icons_party.png"/>
-              <span class="time">20:00</span>
-              Első tánc
-            </p>
-            <p>
-              <span class="time">22:00</span>
-              Torta
-              <img src="img/icons_cake.png"/>
-            </p>
-            <p>
-              <span class="time">23:30</span>
-              Menyasszonytánc
-              <img src="img/icons_party.png"/>
-            </p>
-            <p>
-              <img src="img/icons_midnight_dinner.png"/>
-              <span class="time">24:00</span>
-              Éjféli vacsora
-            </p>
-            <p>
-              <span class="time">04:52</span>
-              Napfelkelte
-              <img src="img/icons_midnight_dinner.png"/>
-            </p>
-          </div>
-          <!-- <button class="timeline-button">Folyt. köv...</button> -->
-        </section>
-
-        <section class="green-bg">
-          <h2>Hol lesz?</h2>
-         
-          <div class="text-section">
-            <h3>Piliscsaba</h3>
-            <p>
-              <a href="https://goo.gl/maps/4tEGDiPXZ2KEx7yF9" target="_blank">Piliscsaba</a> egy kisváros Budapest közelében, az erdős Budai hegyek és Pilis közötti völgybe ékelődve.
-            </p>
-            <p>
-              A legfrisebb adatok szerint 8.391 lakosa van, melynek Ricardo számítása szerint 5%-a a Schmidt családhoz tartozik. Ezt ne felejtsd el, amikor üdvözlöd a helyieket!
-            </p>
-            <p>
-              <b>🚂 Vonattal:</b> A vonatok a  <a href="https://goo.gl/maps/yG6XKpPhH8qQevio7" target="_blank">Nyugati pályaudvarról</a> indulnak félóránként. A Nyugatiból 13:51-kor induló vonatot javasoljuk, ami 14:30-kor érkezik Piliscsabára.
-            </p>
-            <p>
-              <b>🚗 Autóval:</b> A 10-es út köti össze Piliscsabát Budapesttel. A 25 kilométeres út kb fél óráig tart, forgalomtól függően.
-            </p>
-            
-            <div class="divider div-transparent"></div>
-
-            <h3>Szertartás</h3>
-            <p>
-              {templom rajz}
-              Az esküvői szertartás a festői <a href="https://goo.gl/maps/huHSWEjPabPDJrN38" target="_blank">Piliscsabai Református Templomban</a> lesz (akit érdekel, itt a Wikipedia bejegyzés <a href="https://hu.wikipedia.org/wiki/K%C3%A1lvin_J%C3%A1nos" target="_blank">Kálvin János úrról</a>, aki sajnos nem lesz jelen). A vasútállomás kevesebb, mint 1 km-re van (kb 15 perc séta). Ingyenes parkolóhelyek elérhetőek a templomnál vagy a közeli utcákban.
-            </p>  
-          
-            <h3>Lagzi</h3>
-            <p>
-              {koktélok rajz}
-              A lagzi helyszíne a <a href="https://goo.gl/maps/qTG1D5a1K88z7zmh6" target="_blank">Továbbjutás Rendezvényház</a>. A helyszín 1,5 km-re van a templomtól (25 perc séta). Transzfert biztosítunk a szertartás után (kérlek jelezd igényed a Google formban!). Ingyenes parkolás a helyszínen.
-            </p>
-
-            <div class="divider div-transparent"></div>
-
-            <h3>Térkép</h3>
-            <div class="toggle">
-              <input type="checkbox" id="temp">
-              <label for="temp">Google Térkép</label>
-            </div>
-
-            <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F" width="496" height="480" style="display: none;"></iframe>
-            <a href="#map" onclick="event.preventDefault();toggle_map()">
-              <img id="map-picture" src="img/map.png">
-            </a>
-          </div>
-        </section>
-
-        <section class="white-bg">
-          <h2>Hol tudok aludni?</h2>
-            <div class="text-section">
-              <p>
-                Szeretnénk bátorítani, hogy töltsd az éjszakát a városban, hogy minél tovább velünk tudj ünnepelni. Van néhány vendégház a környéken, ami tökéletes 1 éjszakára, ezekről minden infót megtalálsz <a href="https://docs.google.com/document/d/1WZ77rKJWGLyKS-GhgXvsOmB4jexT-qBEurm1unO-W6Q/edit?usp=sharing" target="_blank">itt</a>. Néhány helyet előre lefoglaltunk. Kérlek a lenti Google form kitöltésekor jelezd, ha szeretnél itt aludni és szívesen segítünk a foglalásban.
-              </p>
-          </div>
-        </section>
-
-        <section class="green-bg">
-          <h2>Ajándékok</h2>
-          <div class="icon-section icon-right"> 
-            <div>
-              <p>
-                Ahogy ezt fent is láthattad, hosszú ideje együtt élünk. Időközben összegyűjtöttünk mindent, amire szükségünk van az otthonunkhoz, így arra szeretnénk kérni, hogy ne hozz tárgyi ajándékokat. A jelenléted a legjobb ajándék, amit kaphatunk!
-              </p>
-            </div>
-            <div>
-              <img src="img/icons_gifts.png"/>
-            </div>
-          </div>
-        </section>
-
-        <section class="white-bg">
-          <h2>Covid biztos lesz az esemény?</h2>
-          <div class="icon-section icon-left">            
-            <div><img src="img/icons_covid.png"/></div>
-            <div>
-              <p>Nem tudjuk! Azt szeretnénk, ha ez a nap biztonságos lenne mindenki számára.</p>
-              <p>Mi és a hozzánk közel állók mind be vagyunk oltva.</p>
-              <p>Arra kérünk mindenkit, aki fel tudja venni az oltást, hogy tegye meg, hogy megvédjük a sebezhetőbb vendégeket. Köszönjük!</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="green-bg">
-          <h2>Szeretnék jönni! {nagy rajz}</h2>
-          <p>Kérlek töltsd ki ezt a Google formot, amint lehet (vagy legkésőbb május 1-ig)</p>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQagFblYOou2bsS53f-rCd6Yy4YkToInvqyaKBRa7pyn5r_Q/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Betöltés...</iframe>
-        </section>
-
-        <section class="black-bg">
-          <h2>Elérhetőségek</h2>
-         </section>
+<body>
+  <div id="main">
+    <section class="green-bg">
+      <div id="header">
+        <h3>Még <span id="days_left">?</span> nap</h3>
+        <h1>Evelin és Ricardo nagy napja!</h1>
+        <h3>2022. július 2. — Piliscsaba</h3>
       </div>
-    </ol>
-  </body>
+    </section>
+
+    <section class="white-bg">
+      <h2>Menetrend:</h2>
+
+      <div class="timeline separate" id="timeline-past-separate" style="display:none">
+        <p>
+          <img src="img/icons_baby_pt.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            1994.<br>04.14.
+          </span>
+          <span class="who">Ricardo</span> Megszületett Évorában
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            1994.<br>05.18.
+          </span>
+          <span class="who">Evelin</span> Megszületett Budapesten
+          <img src="img/icons_baby_hu.png" />
+        </p>
+        <p>
+          <img src="img/icons_pacifier.png" />
+          <span class="time">1997</span>
+          <span class="who">Ricardo</span> Még több cumiért sír
+        </p>
+        <p>
+          <span class="time">1998</span>
+          <span class="who">Evelin</span> Egy utcával arrébb költözik (50m)
+          <img src="img/icons_moved_house.png" />
+        </p>
+        <p>
+          <img src="img/icons_mickey.png" />
+          <span class="time">1999</span>
+          <span class="who">Ricardo</span> Mickey egeres órát kap
+        </p>
+        <p>
+          <span class="time">2000</span>
+          <span class="who">Evelin</span> Modell karrierjének csúcsa
+          <img src="img/icons_model.png" />
+        </p>
+        <p>
+          <img src="img/icons_moving_truck.png" />
+          <span class="time">2006</span>
+          <span class="who">Ricardo</span> Albufeirába költözik (200 km)
+        </p>
+        <p>
+          <span class="time">2009</span>
+          <span class="who">Evelin</span> Szerelmes történeteket ír
+          <img src="img/icons_love_story.png" />
+        </p>
+        <p>
+          <img src="img/icons_book_blue.png" />
+          <span class="time">2012</span>
+          <span class="who">Ricardo</span> Pszichológiát tanul Lisszabonban
+        </p>
+        <p>
+          <span class="time">2012</span>
+          <span class="who">Evelin</span> Anglisztikát tanul Piliscsabán
+          <img src="img/icons_book_red.png" />
+        </p>
+        <p>
+          <img src="img/icons_bike.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            2014</br>szept.
+          </span>
+          <span class="who">Ricardo</span> Elkezdi az Erasmust Padovában
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            2015.<br>03.01.
+          </span>
+          <span class="who">Evelin</span> Elkezdi az Erasmust Padovában
+          <img src="img/icons_pizza.png" />
+        </p>
+      </div>
+
+      <button onclick="toggle_past_separate()" id="button-toggle-past-separate" class="timeline-button"
+        style="display:none">
+        Kattints az előzményekért...
+      </button>
+
+      <div class="timeline" id="timeline-past-together" style="display:none">
+        <p>
+          <img src="img/icons_first_meeting.png" />
+            <span class="date"><span class="topspace"></span>
+            2015.<br>03.10.
+          </span>
+          Első találkozás
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            2015.<br>05.24.
+          </span>
+          Első csók
+          <img src="img/icons_kiss.png" />
+        </p>
+        <p>
+          <img src="img/icons_holding_hands.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            2015.<br>06.01.
+          </span>
+          Párkapcsolat kezdete
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            2017.<br>08.21.
+          </span>
+          Összeköltözés Portugáliában
+          <img src="img/icons_flag_pt.png" />
+        </p>
+        <p>
+          <img src="img/icons_flag_hu.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            2018.<br>07.10.
+          </span>
+          Összeköltözés Magyarországon
+        </p>
+        <p>
+          <span class="date">
+            <span class="topspace"></span>
+            2021.<br>09.26.
+          </span>
+          Eljegyzés
+          <img src="img/icons_engagement_ring.png" />
+        </p>
+        <p>
+          <img src="img/icons_wedding.png" />
+          <span class="date">
+            <span class="topspace"></span>
+            2022.<br>07.02.
+          </span>
+          Esküvő!
+        </p>
+      </div>
+
+      <button onclick="toggle_past_together()" id="button-toggle-past-together" class="timeline-button">
+        Kattints a történetünkért...
+      </button>
+
+      <div class="timeline">
+        <p>
+          <img src="img/icons_church.png" />
+          <span class="time">14:30</span>
+          Találkozó a templomnál
+        </p>
+        <p>
+          <span class="time">16:00</span>
+          Fotók
+          <img src="img/icons_camera.png" />
+        </p>
+        <p>
+          <img src="img/icons_cocktail.png" />
+          <span class="time">17:00</span>
+          Koktélok
+        </p>
+        <p>
+          <span class="time">18:30</span>
+          Vacsora
+          <img src="img/icons_dinner.png" />
+        </p>
+        <p>
+          <img src="img/icons_bridedance.png" />
+          <span class="time">20:00</span>
+          Első tánc
+        </p>
+        <p>
+          <span class="time">22:00</span>
+          Torta
+          <img src="img/icons_cake.png" />
+        </p>
+        <p>
+          <span class="time">23:30</span>
+          Menyasszonytánc
+          <img src="img/icons_party.png" />
+        </p>
+        <p>
+          <img src="img/icons_midnight_dinner.png" />
+          <span class="time">24:00</span>
+          Éjféli vacsora
+        </p>
+        <p>
+          <span class="time">04:52</span>
+          Napfelkelte
+          <img src="img/icons_sunrise.png" />
+        </p>
+      </div>
+      <!-- <button class="timeline-button">To be continued...</button> -->
+    </section>
+
+    <section class="green-bg">
+      <h2>Hol lesz?</h2>
+
+      <div class="text-section">
+        <h3>Piliscsaba</h3>
+        <p>
+          <a href="https://goo.gl/maps/4tEGDiPXZ2KEx7yF9" target="_blank">Piliscsaba</a> egy kisváros Budapest közelében, az erdős Budai hegyek és a Pilis közötti völgybe ékelődve.
+        </p>
+        <p>
+          A legfrisebb adatok szerint 8.391 lakosa van, melynek Ricardo számítása szerint 5%-a a Schmidt családhoz tartozik. Ezt ne felejtsd el, amikor üdvözlöd a helyieket! ;)
+        </p>
+        <p>
+          <b>🚂 Megközelítés vonattal:</b> A vonatok a <a href="https://goo.gl/maps/yG6XKpPhH8qQevio7"
+            target="_blank">Nyugati pályaudvarról</a> indulnak félóránként. A legjobb opció szerintünk a Nyugatiból 13:21-kor vagy legkésőbb 13:51-kor induló vonat.
+        </p>
+        <p>
+          <b>🚗 Megközelítés autóval:</b> Piliscsaba Budapestről a 10-es úton érhető el. A 25 kilométeres út megtétele általában fél óráig tart, forgalomtól függően.
+        </p>
+
+        <div class="divider div-transparent"></div>
+
+        <h3>Szertartás</h3>
+        <p>
+          💒 Az esküvői szertartás a festői <a href="https://goo.gl/maps/huHSWEjPabPDJrN38"
+            target="_blank">Piliscsabai Református Templomban</a> lesz (akit érdekel, itt a Wikipedia bejegyzés <a
+            href="https://hu.wikipedia.org/wiki/K%C3%A1lvin_J%C3%A1nos" target="_blank">Kálvin János úrról</a>, aki sajnos nem lesz jelen). 
+        </p>
+        <p>
+          A vasútállomás kevesebb, mint 1 km-re van van innen (kb 15 perc séta). Ingyenes parkolóhelyek elérhetőek a templomnál vagy a közeli utcákban.
+        </p>
+        <p>
+          🕑 <b>Találkozó 14:30-kor a templom előtt. A szertartás 15:00-kor kezdődik.</b>
+        </p>
+
+        <div class="divider div-transparent"></div>
+
+        <h3>Lagzi</h3>
+        <p>
+          🍹 A lagzi helyszíne a <a href="https://goo.gl/maps/qTG1D5a1K88z7zmh6"
+            target="_blank">Továbbjutás Rendezvényház</a>. A helyszín 1,5 km-re van a templomtól (25 perc séta). Transzfert biztosítunk a szertartás után azoknak, akik nem kocsival érkeznek (kérlek jelezd igényed a Google formban!). Ingyenes parkolás a helyszínen.
+        </p>
+
+        <div class="divider div-transparent"></div>
+      </div>
+
+      <div>
+        <h3>Térkép</h3>
+      </div>
+      <div id="map-section">
+        <img id="map-picture" src="img/map.png">
+        <iframe id="map"
+          src="https://www.google.com/maps/d/u/0/embed?mid=165ZLt1QoxTKLPthWmpZAUsdu4NRRmrVV&ehbc=2E312F"></iframe>
+      </div>
+    </section>
+
+    <section class="white-bg">
+      <h2>Hol tudok aludni?</h2>
+      <div class="text-section">
+        <p>
+          ⛺ Szeretnénk bátorítani, hogy töltsd az éjszakát Piliscsabán, hogy minél tovább velünk tudj ünnepelni. Van néhány vendégház a környéken, ami tökéletes 1 éjszakára, ezekről minden infót megtalálsz <a
+            href="https://docs.google.com/document/d/1QhvzmFHe52G3KZaTI9P6nIridWxrXYBQgWcIYpRPBWU/edit?usp=sharing"
+            target="_blank">itt</a>. Néhány helyet előre lefoglaltunk. Kérlek a lenti Google form kitöltésekor jelezd, ha szeretnél itt aludni és szívesen segítünk a foglalásban.
+        </p>
+      </div>
+    </section>
+
+    <section class="green-bg">
+      <h2>Ajándékok</h2>
+      <div class="icon-section icon-right">
+        <div>
+          <p>
+            Ahogy ezt fent is láthattad, már hosszú ideje együtt élünk. Időközben összegyűjtöttünk mindent, amire szükségünk van az otthonunkhoz, így arra szeretnénk kérni, hogy ne hozz tárgyi ajándékokat. 
+          </p>
+          <p>
+            A jelenléted a legjobb ajándék, amit kaphatunk!
+          </p>
+        </div>
+        <div>
+          <img src="img/icons_gifts.png" />
+        </div>
+      </div>
+    </section>
+
+    <section class="white-bg">
+      <h2>Covid-biztos lesz az esemény?</h2>
+      <div class="icon-section icon-left">
+        <div><img src="img/icons_covid.png" /></div>
+        <div>
+          <p>Nem tudjuk! Azt szeretnénk, ha ez a nap biztonságos lenne mindenki számára.</p>
+          <p>Mi és a hozzánk közel állók mind be vagyunk oltva.</p>
+          <p>Arra kérünk mindenkit, aki fel tudja venni az oltást, hogy tegye meg, hogy megvédjük a sebezhetőbb vendégeket. Köszönjük!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="green-bg">
+      <h2>Szeretnék jönni!</h2>
+      <div class="text-section">
+        <p>
+          Kérlek töltsd ki ezt a Google formot, amint lehet (vagy legkésőbb május 1-ig), hogy fel tudjunk készülni időben:
+        </p>
+      </div>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdQagFblYOou2bsS53f-rCd6Yy4YkToInvqyaKBRa7pyn5r_Q/viewform?embedded=true"
+        width="100%" height="715" frameborder="0" marginheight="0" marginwidth="0">Betöltés...</iframe>
+    </section>
+
+    <section class="black-bg">
+      <div class="icon-section icon-left icon-center">
+        <div>
+          <h2>Ott találkozunk!</h2>
+        </div>
+        <div><img src="img/icons_calendar.png" /></div>
+        <h4>Illusztrálta:<br>Schmidt Rebeka</h4>
+      </div>
+    </section>
+  </div>
+</body>
+<script>set_date()</script>
 </html>
