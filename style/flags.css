@@ -5,16 +5,19 @@ html{
 body {
     height: 100%;
     margin: 0;
-    background-color: #f5f5f4;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18pt;
     color: #191726;
 }
 
 h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 2em;
+    font-size: 4vw;
     text-align: center;
+    margin: 0 0 -2vw;
+}
+
+a {
+    color: #191726;
+    text-decoration: none;
 }
 
 #flag-outer-container {
@@ -36,11 +39,30 @@ h1 {
     text-align: center;
 }
 
-.flag {
-    width: 300px;
+.flag img {
+    width: 30vw;
+    max-width: 300px;
     opacity: 30%;
 }
 
-.flag:hover, flag:active {
+.flag:hover img,
+.flag:active img {
     opacity: 100%;
+}
+
+
+@media screen and (max-width: 600px) and (orientation: portrait){
+    h1 {
+        font-size: 8vw;
+        margin-bottom: -3vw;
+    }
+
+    #flag-inner-container {
+        padding-top: 5vw;
+    }
+
+    .flag img {
+        width: 40vw;
+        padding: 0 10vw;
+    }
 }
